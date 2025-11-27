@@ -1,8 +1,34 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pseudocode Editor</title>
+<link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <h1>Pseudocode Editor</h1>
-  <p>Website test</p>
-</body>
+<h1>Pseudocode Editor</h1>
 
+<div class="editor-container">
+  <div class="line-numbers" id="lineNumbers">1</div>
+  <div class="editor-wrapper">
+    <pre class="highlight-layer" id="highlight"></pre>
+    <textarea id="editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">Fibonacci(n)
+    previous_numbers = [0, 1]  // Numbers for Fibonacci(0) and Fibonacci(1)
+
+    for i=2 to n do
+        new_number = previous_numbers[n-2] + previous_numbers[n-1]
+        previous_numbers.append(new_number)
+
+    return previous_numbers[n]
+</textarea>
+  </div>
+</div>
+
+<button id="clearBtn">Clear Code</button>
+
+<script src="highlight.js"></script>
+<script src="window.js"></script>
+
+</body>
 </html>
