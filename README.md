@@ -2,7 +2,7 @@
 
 This is a web-based **Pseudocode editor** featuring live syntax highlighting. It highlights:
 
-- **Keywords** (`for`, `if`, `else`, `do`, `end`, etc. Full list can bee found in highlight.js)
+- **Keywords** (`for`, `if`, `else`, `do`, `end`, etc. - Full list can be found in `highlight.js`)
 - **Variables** (assigned using `=` or loop variables)
 - **Function names**
 - **Function parameters**

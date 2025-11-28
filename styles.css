@@ -1,46 +1,106 @@
 * { box-sizing: border-box; }
 
-  body {
-    font-family: Arial, sans-serif;
-    background: #0f1320; /* darker overall background for contrast */
-    color: #eaf0ff;
-    padding: 20px;
-    margin: 0;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background: #0f1320; /* darker overall background for contrast */
+  color: #eaf0ff;
+  padding: 20px;
+  margin: 0;
+}
 
-  h1 { margin-bottom: 10px; color: #e5e9f0; }
 
-  .editor-container {
-    display: flex;
-    background: #1a2033;
-    border-radius: 10px;
-    font-size: 16px;
-    line-height: 1.6;
-    font-family: monospace;
-    height: calc(100vh - 160px);  /* Nearly full height, leaves space for button */
-    min-height: 420px;             /* Sensible minimum */
-    overflow: hidden;
-    border: 1px solid #2a3350;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.45);
-  }
+/* -------- TITLE + BUTTON ROW -------- */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  min-width: 500px;
+}
 
-  .line-numbers {
-    background: #222a44;
-    color: #cfd6e3;
-    padding: 16px 12px;
-    text-align: right;
-    white-space: pre;
-    user-select: none;
-    overflow: hidden;
-    min-width: 44px;
-    border-right: 1px solid #2f395f;
-  }
+h1 {
+  margin: 0;
+  color: #e5e9f0;
+}
 
-  .editor-wrapper {
-    position: relative;
-    flex: 1;
-    height: 100%;
-  }
+/* Button group */
+.button-group {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+button {
+  padding: 12px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #0fb3ff;
+  background: linear-gradient(180deg, #0fb3ff, #0a86c3);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(10,134,195,0.45);
+}
+
+button:hover {
+  background: linear-gradient(180deg, #25c7ff, #0b93d4);
+}
+
+
+/* GitHub button */
+.githubBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #0fb3ff;
+  background: #131a2d;
+  color: #0fb3ff;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(10,134,195,0.3);
+  transition: 0.2s ease;
+}
+
+.github-btn:hover {
+  background: #0fb3ff;
+  color: #ffffff;
+}
+
+
+/* -------- EDITOR CONTAINER -------- */
+.editor-container {
+  display: flex;
+  background: #1a2033;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: monospace;
+  height: calc(100vh - 100px);  /* Nearly full height, leaves space for button */
+  min-height: 200px;
+  min-width: 500px;
+  overflow: hidden;
+  border: 1px solid #2a3350;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+}
+
+.line-numbers {
+  background: #222a44;
+  color: #cfd6e3;
+  padding: 16px 12px;
+  text-align: right;
+  white-space: pre;
+  user-select: none;
+  overflow: hidden;
+  min-width: 44px;
+  border-right: 1px solid #2f395f;
+}
+
+.editor-wrapper {
+  position: relative;
+  flex: 1;
+  height: 100%;
+}
 
 .highlight-layer {
   position: absolute;
@@ -82,27 +142,11 @@ textarea {
 }
 
 
-  /* ===== Stronger colors ===== */
-  .keyword   { color: #ffb300; font-weight: 800; }  /* stronger orange */
-  .variable  { color: #f24495; font-weight: 700; }  /* stronger pink */
-  .param    { color: #00e5ff; font-weight: 700; }  /* cyan for undefined identifiers */
-  .value     { color: #19a94d; font-weight: 700; }  /* stronger green */
-  .function  { color: #3881ff; font-weight: 800; }  /* slightly darker blue than cyan */
-  .comment   { color: #cfd3dd; font-style: italic; }/* uniform light grey + italic */
+/* ===== Highlight colors ===== */
+.keyword   { color: #ffb300; font-weight: 800; }  /* stronger orange */
+.variable  { color: #f24495; font-weight: 700; }  /* stronger pink */
+.param     { color: #00e5ff; font-weight: 700; }  /* cyan for undefined identifiers */
+.value     { color: #19a94d; font-weight: 700; }  /* stronger green */
+.function  { color: #3881ff; font-weight: 800; }  /* slightly darker blue than cyan */
+.comment   { color: #cfd3dd; font-style: italic; }/* uniform light grey + italic */
 
-
-  button {
-    margin-top: 14px;
-    padding: 12px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 8px;
-    border: 1px solid #0fb3ff;
-    background: linear-gradient(180deg, #0fb3ff, #0a86c3);
-    color: #fff;
-    box-shadow: 0 6px 18px rgba(10,134,195,0.45);
-  }
-
-  button:hover {
-    background: linear-gradient(180deg, #25c7ff, #0b93d4);
-  }
