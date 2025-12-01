@@ -2,7 +2,7 @@
 const KEYWORDS = [
   'for', 'if', 'else', 'then', 'do', 'return', 'in', 'of', 'while', 'end', 'break', 'next', 'continue', 'to', 'foreach', 'skip', 'function', 'mod', 'step', 'repeat', 'until', 'exit', 'class', 'instance'
 ];
-const BUILTIN_VALUES = ['true', 'false', 'null', 'none'];
+const BUILTIN_VALUES = ['true', 'false', 'null', 'none', 'infinity'];
 
 
 // Escape HTML (simple, safe)
@@ -89,7 +89,7 @@ function analyzeTokens(tokens, raw) {
     const t = tokens[i];
 
     // for <var> in ...
-    if(t.type==='keyword' && t.text==='for'){
+    if((t.type==='keyword' && t.text==='for') || (t.type==='keyword' && t.text==='foreach')){
       let j=i+1; while(j<tokens.length && tokens[j].type==='whitespace') j++;
       if(tokens[j] && tokens[j].type==='identifier'){
         let k=j+1; while(k<tokens.length && tokens[k].type==='whitespace') k++;

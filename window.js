@@ -57,3 +57,18 @@ editor.addEventListener('input', updateHighlight);
 
 // Initial highlight
 updateHighlight();
+
+
+let hasUnsavedChanges = false;
+
+// Whenever the editor changes:
+editor.addEventListener("input", () => {
+  hasUnsavedChanges = true;
+});
+
+window.addEventListener("beforeunload", (event) => {
+  if (!hasUnsavedChanges) return;   // allow navigation without warning
+
+  event.preventDefault();
+  event.returnValue = "";
+});

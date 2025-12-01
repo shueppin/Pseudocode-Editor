@@ -9,18 +9,32 @@ body {
 }
 
 
-/* -------- TITLE + BUTTON ROW -------- */
+/* -------- TITLE + TEXT + BUTTON ROW -------- */
 .header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
   min-width: 500px;
+  gap: 20px;
 }
 
 h1 {
   margin: 0;
   color: #e5e9f0;
+}
+
+.title {
+  white-space: nowrap;
+}
+
+.subtitle {
+  flex: 1;          /* fills all space between title and buttons */
+  text-align: center;
+  color: #cfd6e3;
+  margin: 0;
+  font-size: 16px;
+  min-width: 240px;
 }
 
 /* Button group */
@@ -29,6 +43,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 12px;
+  white-space: nowrap;
 }
 
 button {
